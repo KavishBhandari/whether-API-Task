@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "declaration": false,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+
+    "types": ["node"]   // ⭐ IMPORTANT
+  },
+
+  "include": ["src/**/*", "uploads/multer.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
