@@ -13,6 +13,6 @@ export const messages = {
     SUCCESS:"Success",
     INTERNAL_SERVER_ERROR: 'Internal server error !!',
     UNAUTHORIZED_ACCESS: 'Unauthorized access !!',
-    
+    CITY_NOT_FOUND: "City not found !!"
 
 };

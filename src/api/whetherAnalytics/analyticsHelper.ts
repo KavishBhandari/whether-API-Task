@@ -3,8 +3,10 @@ import { DBHelper } from "../../helper/dbHelper";
 import { library } from "../../utils/library";
 
 import axios from "axios";
+import { ApiError } from "../../utils/apiError";
+import { messages, statusCode } from "../../utils/constant";
 
-const API_KEY = process.env.WEATHER_API_KEY || "your whether api key";
+const API_KEY = process.env.WEATHER_API_KEY || "15227dc3540e0836f908983a67a9cd6f";
 
 class WhetherAnalyticsHelper {
 
@@ -115,7 +117,10 @@ class WhetherAnalyticsHelper {
             true
         );
 
-        console.log("cityAnalyticsData:::::::::::", cityAnalyticsData)
+
+        if(!cityAnalyticsData){
+            throw new ApiError(statusCode.BAD_REQUEST, messages.CITY_NOT_FOUND);
+        }
 
         const temps = cityAnalyticsData.forecasts.map((f: any) => f.temperature);
 
